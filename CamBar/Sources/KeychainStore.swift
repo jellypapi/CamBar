@@ -2,7 +2,7 @@ import Foundation
 import Security
 
 enum KeychainStore {
-    private static let service = "local.campeek"
+    private static let service = "local.cambar"
 
     static func read(account: String) -> String? {
         let query: [String: Any] = [

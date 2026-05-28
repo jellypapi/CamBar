@@ -33,7 +33,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         statusItem.button?.imagePosition = .imageOnly
         statusItem.button?.target = self
         statusItem.button?.action = #selector(togglePreviewPanel)
-        statusItem.button?.toolTip = "CamPeek"
+        statusItem.button?.toolTip = "CamBar"
         if let button = statusItem.button {
             statusHoverController = StatusItemHoverController(button: button)
         }
@@ -78,11 +78,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         statusItem.button?.image = makeBabyStatusIcon(status: status)
         switch status {
         case .idle:
-            statusItem.button?.toolTip = "CamPeek"
+            statusItem.button?.toolTip = "CamBar"
         case .connecting:
-            statusItem.button?.toolTip = "CamPeek - connecting"
+            statusItem.button?.toolTip = "CamBar - connecting"
         case .playing:
-            statusItem.button?.toolTip = "CamPeek - live"
+            statusItem.button?.toolTip = "CamBar - live"
         }
     }
 
@@ -284,7 +284,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 enum FileLogger {
     static func write(_ message: String) {
         let line = "\(Date()) \(message)\n"
-        let url = URL(fileURLWithPath: "/tmp/CamPeek.log")
+        let url = URL(fileURLWithPath: "/tmp/CamBar.log")
 
         guard let data = line.data(using: .utf8) else {
             return

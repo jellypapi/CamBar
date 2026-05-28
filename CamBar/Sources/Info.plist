@@ -5,13 +5,13 @@
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
   <key>CFBundleExecutable</key>
-  <string>CamPeek</string>
+  <string>CamBar</string>
   <key>CFBundleIdentifier</key>
-  <string>local.campeek</string>
+  <string>local.cambar</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundleName</key>
-  <string>CamPeek</string>
+  <string>CamBar</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
@@ -23,6 +23,6 @@
   <key>LSUIElement</key>
   <true/>
   <key>NSLocalNetworkUsageDescription</key>
-  <string>CamPeek connects to local RTSP camera streams on your network.</string>
+  <string>CamBar connects to local RTSP camera streams on your network.</string>
 </dict>
 </plist>

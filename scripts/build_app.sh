@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-APP_DIR="$ROOT_DIR/build/Manual/CamPeek.app"
+APP_DIR="$ROOT_DIR/build/Manual/CamBar.app"
 FRAMEWORK_SRC="$ROOT_DIR/Pods/VLCKit/VLCKit.xcframework/macos-arm64_x86_64/VLCKit.framework"
 SDK_PATH="$(xcrun --sdk macosx --show-sdk-path)"
 
@@ -20,10 +20,10 @@ xcrun swiftc \
   -framework AppKit \
   -framework Security \
   -framework VLCKit \
-  "$ROOT_DIR"/CamPeek/Sources/*.swift \
-  -o "$APP_DIR/Contents/MacOS/CamPeek"
+  "$ROOT_DIR"/CamBar/Sources/*.swift \
+  -o "$APP_DIR/Contents/MacOS/CamBar"
 
-cp "$ROOT_DIR/CamPeek/Sources/Info.plist" "$APP_DIR/Contents/Info.plist"
+cp "$ROOT_DIR/CamBar/Sources/Info.plist" "$APP_DIR/Contents/Info.plist"
 ditto "$FRAMEWORK_SRC" "$APP_DIR/Contents/Frameworks/VLCKit.framework"
 codesign --force --deep --sign - "$APP_DIR"
 

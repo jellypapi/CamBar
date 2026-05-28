@@ -7,8 +7,8 @@ enum StreamStatus: String {
 }
 
 extension Notification.Name {
-    static let streamStatusDidChange = Notification.Name("CamPeek.streamStatusDidChange")
-    static let largeCameraDidOpen = Notification.Name("CamPeek.largeCameraDidOpen")
+    static let streamStatusDidChange = Notification.Name("CamBar.streamStatusDidChange")
+    static let largeCameraDidOpen = Notification.Name("CamBar.largeCameraDidOpen")
 }
 
 enum StreamStatusCenter {

@@ -1,6 +1,6 @@
-# CamPeek
+# CamBar
 
-CamPeek is a small macOS menu bar viewer for local RTSP camera streams.
+CamBar is a small macOS menu bar viewer for local RTSP camera streams.
 
 It is built for quick checks while working: click the menu bar icon, glance at the live preview, adjust volume or mute, then get back to work.
 
@@ -44,11 +44,11 @@ Example:
 rtsp://babycam:your-password@192.168.0.45:554/stream1
 ```
 
-If the URL works in VLC, it should work in CamPeek.
+If the URL works in VLC, it should work in CamBar.
 
 TP-Link reference: [How to view Tapo camera on a PC through RTSP stream](https://www.tp-link.com/support/faq/2680/)
 
-## Using CamPeek
+## Using CamBar
 
 1. Build and open the app.
 2. Click the baby-face icon in the macOS menu bar.
@@ -65,10 +65,10 @@ The app saves camera tabs, RTSP URLs, mute state, volume, selected tab, and prev
 pod install
 chmod +x scripts/build_app.sh
 scripts/build_app.sh
-open build/Manual/CamPeek.app
+open build/Manual/CamBar.app
 ```
 
-You can also open `CamPeek.xcworkspace` in Xcode after running `pod install`, but `scripts/build_app.sh` is the reliable local build path right now.
+You can also open `CamBar.xcworkspace` in Xcode after running `pod install`, but `scripts/build_app.sh` is the reliable local build path right now.
 
 ## Development Notes
 
@@ -79,4 +79,4 @@ You can also open `CamPeek.xcworkspace` in Xcode after running `pod install`, bu
 
 ## Privacy
 
-CamPeek connects directly to RTSP URLs on your local network. It does not require a cloud login and does not send your camera credentials to a server.
+CamBar connects directly to RTSP URLs on your local network. It does not require a cloud login and does not send your camera credentials to a server.

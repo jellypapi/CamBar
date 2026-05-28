@@ -11,24 +11,24 @@
 		2967D5CE2A50D0B63BD37952 /* LargeCameraWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */; };
 		45DAF62E3565855BC2043C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B71839F75F79FACBD3060 /* AppDelegate.swift */; };
 		57CDA64A8B355BE1870E4605 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 5DE6629856F97F663B77C6BB /* Info.plist */; };
-		81B4C695B6850AAB5C00B0AD /* Pods_CamPeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACD7FE327CAFF2A46176233 /* Pods_CamPeek.framework */; };
+		81B4C695B6850AAB5C00B0AD /* Pods_CamBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACD7FE327CAFF2A46176233 /* Pods_CamBar.framework */; };
 		89BBA1CEA7207AA808B9D587 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A48611AFE6BB7BCD65785 /* KeychainStore.swift */; };
 		90599D009BC664F6B7F2806C /* CameraPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D8B6B0739534E599F9912A /* CameraPopoverViewController.swift */; };
 		AABFD7BFD2D1982B71C4365B /* CameraSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB27E1F792AB90652BCD287 /* CameraSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CA70F9DB10662CC1E6F1109 /* Pods-CamPeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamPeek.debug.xcconfig"; path = "Target Support Files/Pods-CamPeek/Pods-CamPeek.debug.xcconfig"; sourceTree = "<group>"; };
-		1ACD7FE327CAFF2A46176233 /* Pods_CamPeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamPeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32B64ADC8946A4DAAC251E4B /* CamPeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamPeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AB27E1F792AB90652BCD287 /* CameraSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraSettings.swift; path = CamPeek/Sources/CameraSettings.swift; sourceTree = "<group>"; };
-		5DE6629856F97F663B77C6BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CamPeek/Sources/Info.plist; sourceTree = "<group>"; };
-		82D8B6B0739534E599F9912A /* CameraPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraPopoverViewController.swift; path = CamPeek/Sources/CameraPopoverViewController.swift; sourceTree = "<group>"; };
-		86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LargeCameraWindowController.swift; path = CamPeek/Sources/LargeCameraWindowController.swift; sourceTree = "<group>"; };
-		A70B71839F75F79FACBD3060 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CamPeek/Sources/AppDelegate.swift; sourceTree = "<group>"; };
-		CD7A077A943F7EAFECE82457 /* Pods-CamPeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamPeek.release.xcconfig"; path = "Target Support Files/Pods-CamPeek/Pods-CamPeek.release.xcconfig"; sourceTree = "<group>"; };
+		0CA70F9DB10662CC1E6F1109 /* Pods-CamBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamBar.debug.xcconfig"; path = "Target Support Files/Pods-CamBar/Pods-CamBar.debug.xcconfig"; sourceTree = "<group>"; };
+		1ACD7FE327CAFF2A46176233 /* Pods_CamBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B64ADC8946A4DAAC251E4B /* CamBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB27E1F792AB90652BCD287 /* CameraSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraSettings.swift; path = CamBar/Sources/CameraSettings.swift; sourceTree = "<group>"; };
+		5DE6629856F97F663B77C6BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CamBar/Sources/Info.plist; sourceTree = "<group>"; };
+		82D8B6B0739534E599F9912A /* CameraPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraPopoverViewController.swift; path = CamBar/Sources/CameraPopoverViewController.swift; sourceTree = "<group>"; };
+		86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LargeCameraWindowController.swift; path = CamBar/Sources/LargeCameraWindowController.swift; sourceTree = "<group>"; };
+		A70B71839F75F79FACBD3060 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CamBar/Sources/AppDelegate.swift; sourceTree = "<group>"; };
+		CD7A077A943F7EAFECE82457 /* Pods-CamBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamBar.release.xcconfig"; path = "Target Support Files/Pods-CamBar/Pods-CamBar.release.xcconfig"; sourceTree = "<group>"; };
 		E5653527D4D9C92715CFAACB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		ED1A48611AFE6BB7BCD65785 /* KeychainStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainStore.swift; path = CamPeek/Sources/KeychainStore.swift; sourceTree = "<group>"; };
+		ED1A48611AFE6BB7BCD65785 /* KeychainStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainStore.swift; path = CamBar/Sources/KeychainStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,14 +37,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CE7501138796590BF6BE4A /* Cocoa.framework in Frameworks */,
-				81B4C695B6850AAB5C00B0AD /* Pods_CamPeek.framework in Frameworks */,
+				81B4C695B6850AAB5C00B0AD /* Pods_CamBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67CD7289C98AB7BAB2C593C1 /* CamPeek */ = {
+		67CD7289C98AB7BAB2C593C1 /* CamBar */ = {
 			isa = PBXGroup;
 			children = (
 				A70B71839F75F79FACBD3060 /* AppDelegate.swift */,
@@ -54,14 +54,14 @@
 				ED1A48611AFE6BB7BCD65785 /* KeychainStore.swift */,
 				86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */,
 			);
-			name = CamPeek;
+			name = CamBar;
 			sourceTree = "<group>";
 		};
 		718F367182D6DA5B8DF065E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CD7A077A943F7EAFECE82457 /* Pods-CamPeek.release.xcconfig */,
-				0CA70F9DB10662CC1E6F1109 /* Pods-CamPeek.debug.xcconfig */,
+				CD7A077A943F7EAFECE82457 /* Pods-CamBar.release.xcconfig */,
+				0CA70F9DB10662CC1E6F1109 /* Pods-CamBar.debug.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				80A7ECCBB5134B7672D959B5 /* OS X */,
-				1ACD7FE327CAFF2A46176233 /* Pods_CamPeek.framework */,
+				1ACD7FE327CAFF2A46176233 /* Pods_CamBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 		AB1FCF53F324AB88336E64AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32B64ADC8946A4DAAC251E4B /* CamPeek.app */,
+				32B64ADC8946A4DAAC251E4B /* CamBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 			children = (
 				AB1FCF53F324AB88336E64AB /* Products */,
 				7E1F0282A23FEFB2828A763B /* Frameworks */,
-				67CD7289C98AB7BAB2C593C1 /* CamPeek */,
+				67CD7289C98AB7BAB2C593C1 /* CamBar */,
 				718F367182D6DA5B8DF065E0 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -105,9 +105,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B146725F07E4ECBC1BCCDE8 /* CamPeek */ = {
+		8B146725F07E4ECBC1BCCDE8 /* CamBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 377254CC583A2EF36F011D7C /* Build configuration list for PBXNativeTarget "CamPeek" */;
+			buildConfigurationList = 377254CC583A2EF36F011D7C /* Build configuration list for PBXNativeTarget "CamBar" */;
 			buildPhases = (
 				A9D4E6AF5E88014FB71AE777 /* [CP] Check Pods Manifest.lock */,
 				06BDE3267933C0DD24A79614 /* Sources */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = CamPeek;
-			productName = CamPeek;
-			productReference = 32B64ADC8946A4DAAC251E4B /* CamPeek.app */;
+			name = CamBar;
+			productName = CamBar;
+			productReference = 32B64ADC8946A4DAAC251E4B /* CamBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +133,7 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 			};
-			buildConfigurationList = 74B752D9026536A90FDAA8D6 /* Build configuration list for PBXProject "CamPeek" */;
+			buildConfigurationList = 74B752D9026536A90FDAA8D6 /* Build configuration list for PBXProject "CamBar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B146725F07E4ECBC1BCCDE8 /* CamPeek */,
+				8B146725F07E4ECBC1BCCDE8 /* CamBar */,
 			);
 		};
 /* End PBXProject section */
@@ -170,7 +170,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CamPeek/Pods-CamPeek-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CamBar/Pods-CamBar-frameworks.sh",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VLCKit/VLCKit.framework/VLCKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -179,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CamPeek/Pods-CamPeek-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CamBar/Pods-CamBar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9D4E6AF5E88014FB71AE777 /* [CP] Check Pods Manifest.lock */ = {
@@ -197,7 +197,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CamPeek-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CamBar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -225,7 +225,7 @@
 /* Begin XCBuildConfiguration section */
 		2C6F82C0B63E03282CBFFC21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CA70F9DB10662CC1E6F1109 /* Pods-CamPeek.debug.xcconfig */;
+			baseConfigurationReference = 0CA70F9DB10662CC1E6F1109 /* Pods-CamBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -237,12 +237,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/**",
 				);
-				INFOPLIST_FILE = CamPeek/Sources/Info.plist;
+				INFOPLIST_FILE = CamBar/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "local.campeek";
-				PRODUCT_NAME = CamPeek;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.cambar";
+				PRODUCT_NAME = CamBar;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
@@ -251,7 +251,7 @@
 		};
 		78F36A0ED65698026BED90FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD7A077A943F7EAFECE82457 /* Pods-CamPeek.release.xcconfig */;
+			baseConfigurationReference = CD7A077A943F7EAFECE82457 /* Pods-CamBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -263,12 +263,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/**",
 				);
-				INFOPLIST_FILE = CamPeek/Sources/Info.plist;
+				INFOPLIST_FILE = CamBar/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "local.campeek";
-				PRODUCT_NAME = CamPeek;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.cambar";
+				PRODUCT_NAME = CamBar;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		377254CC583A2EF36F011D7C /* Build configuration list for PBXNativeTarget "CamPeek" */ = {
+		377254CC583A2EF36F011D7C /* Build configuration list for PBXNativeTarget "CamBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78F36A0ED65698026BED90FB /* Release */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74B752D9026536A90FDAA8D6 /* Build configuration list for PBXProject "CamPeek" */ = {
+		74B752D9026536A90FDAA8D6 /* Build configuration list for PBXProject "CamBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB722619B552E6D2B08F2EAA /* Debug */,

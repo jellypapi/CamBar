@@ -40,7 +40,7 @@ final class LargeCameraWindowController: NSWindowController, NSWindowDelegate, N
             backing: .buffered,
             defer: false
         )
-        window.title = "CamPeek"
+        window.title = "CamBar"
         window.titlebarAppearsTransparent = false
         window.isOpaque = true
         window.backgroundColor = .windowBackgroundColor
