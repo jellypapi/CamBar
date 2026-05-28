@@ -80,7 +80,7 @@ On first launch, macOS may block the app because it was downloaded from the inte
 
 - The app uses VLCKit for RTSP playback.
 - Preview playback is managed in `CameraPopoverViewController`.
-- The large-window flow is currently not part of the main UX; controls live in the menu bar preview.
+- Playback controls live in the menu bar preview.
 - The menu bar preview uses a non-activating panel, with explicit text-field focus handling so URL editing and paste work.
 
 ## Privacy

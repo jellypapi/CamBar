@@ -18,12 +18,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             name: .streamStatusDidChange,
             object: nil
         )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(largeCameraDidOpen),
-            name: .largeCameraDidOpen,
-            object: nil
-        )
         previewController = CameraPopoverViewController()
         previewPanel = makePreviewPanel()
 
@@ -38,14 +32,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             statusHoverController = StatusItemHoverController(button: button)
         }
         FileLogger.write("status item configured: button=\(statusItem.button != nil)")
-    }
-
-    @objc private func largeCameraDidOpen() {
-        if previewPanel.isVisible {
-            previewPanel.orderOut(nil)
-            removeClickMonitors()
-            statusHoverController?.setActive(false)
-        }
     }
 
     private func makePreviewPanel() -> NSPanel {

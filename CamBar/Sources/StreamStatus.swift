@@ -8,7 +8,6 @@ enum StreamStatus: String {
 
 extension Notification.Name {
     static let streamStatusDidChange = Notification.Name("CamBar.streamStatusDidChange")
-    static let largeCameraDidOpen = Notification.Name("CamBar.largeCameraDidOpen")
 }
 
 enum StreamStatusCenter {
@@ -18,11 +17,5 @@ enum StreamStatusCenter {
             object: nil,
             userInfo: ["status": status.rawValue]
         )
-    }
-}
-
-enum CameraWindowEvents {
-    static func largeCameraDidOpen() {
-        NotificationCenter.default.post(name: .largeCameraDidOpen, object: nil)
     }
 }

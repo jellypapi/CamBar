@@ -10,7 +10,7 @@
 
 - 메뉴바 아이콘은 아기 얼굴 아이콘.
 - 미리보기 패널은 메뉴바 바로 아래에 붙는 반투명 glass 스타일.
-- 큰화면은 주 플로우에서 제거하는 방향.
+- 큰화면 플로우는 제거했고, 미리보기 안에서 조작을 끝내는 방향.
 - 미리보기 안에 필요한 조작을 모은다:
   - 탭 전환
   - 탭 추가
@@ -55,16 +55,12 @@ rtsp://USERNAME:PASSWORD@CAMERA_IP:554/stream2
 - `CameraSettings`
   - camera streams, selected index, mute, volume, preview keep-alive 설정을 `UserDefaults`에 저장한다.
 
-- `LargeCameraWindowController`
-  - 아직 파일은 남아 있지만, 현재 제품 방향에서는 핵심 플로우가 아니다.
-  - 정리할 때는 이벤트/Notification 의존성까지 같이 제거해야 한다.
-
 ## 최근 UX 결정
 
 - 탭 이름 변경은 일단 보류.
 - `+` 버튼은 새 탭을 `CAM1`, `CAM2`, `CAM3` 식으로 만든다.
 - 탭 삭제는 탭 안의 `x`로 처리한다.
-- 큰화면 버튼과 비디오 클릭 큰화면 진입은 제거하는 방향.
+- 큰화면 버튼과 비디오 클릭 큰화면 진입은 제거했다.
 - 탭 선택/hover 색은 파란 macOS accent color를 피하고 기존 glass/green 톤을 유지한다.
 - URL에는 실제 사용자 계정/비밀번호를 문서에 남기지 않는다.
 
@@ -90,7 +86,5 @@ pgrep -fl CamBar
 
 ## 다음 정리 후보
 
-- `LargeCameraWindowController` 제거 또는 feature flag 처리.
-- `StreamStatus.largeCameraDidOpen` 이벤트 제거.
 - 탭 rename 관련 죽은 코드 제거.
 - 기본 카메라 URL이 개발자 개인 환경으로 하드코딩되어 있는지 점검하고 placeholder로 바꾸기.

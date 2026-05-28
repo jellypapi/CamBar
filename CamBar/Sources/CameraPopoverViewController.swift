@@ -858,7 +858,6 @@ final class VideoHoverOverlayView: NSView {
     var onHoverChanged: ((Bool) -> Void)?
     var onPrevious: (() -> Void)?
     var onNext: (() -> Void)?
-    var onLarge: (() -> Void)?
     private var trackingArea: NSTrackingArea?
 
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
@@ -899,11 +898,7 @@ final class VideoHoverOverlayView: NSView {
 
         let point = convert(event.locationInWindow, from: nil)
         let edgeWidth: CGFloat = 72
-        let largeRect = NSRect(x: bounds.maxX - edgeWidth, y: 0, width: edgeWidth, height: edgeWidth)
-
-        if largeRect.contains(point) {
-            onLarge?()
-        } else if point.x <= edgeWidth {
+        if point.x <= edgeWidth {
             onPrevious?()
         } else if point.x >= bounds.maxX - edgeWidth {
             onNext?()

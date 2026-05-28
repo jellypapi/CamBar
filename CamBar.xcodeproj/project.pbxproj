@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04CE7501138796590BF6BE4A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5653527D4D9C92715CFAACB /* Cocoa.framework */; };
-		2967D5CE2A50D0B63BD37952 /* LargeCameraWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */; };
 		45DAF62E3565855BC2043C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B71839F75F79FACBD3060 /* AppDelegate.swift */; };
 		57CDA64A8B355BE1870E4605 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 5DE6629856F97F663B77C6BB /* Info.plist */; };
 		81B4C695B6850AAB5C00B0AD /* Pods_CamBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACD7FE327CAFF2A46176233 /* Pods_CamBar.framework */; };
@@ -24,7 +23,6 @@
 		3AB27E1F792AB90652BCD287 /* CameraSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraSettings.swift; path = CamBar/Sources/CameraSettings.swift; sourceTree = "<group>"; };
 		5DE6629856F97F663B77C6BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CamBar/Sources/Info.plist; sourceTree = "<group>"; };
 		82D8B6B0739534E599F9912A /* CameraPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraPopoverViewController.swift; path = CamBar/Sources/CameraPopoverViewController.swift; sourceTree = "<group>"; };
-		86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LargeCameraWindowController.swift; path = CamBar/Sources/LargeCameraWindowController.swift; sourceTree = "<group>"; };
 		A70B71839F75F79FACBD3060 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CamBar/Sources/AppDelegate.swift; sourceTree = "<group>"; };
 		CD7A077A943F7EAFECE82457 /* Pods-CamBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamBar.release.xcconfig"; path = "Target Support Files/Pods-CamBar/Pods-CamBar.release.xcconfig"; sourceTree = "<group>"; };
 		E5653527D4D9C92715CFAACB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -52,7 +50,6 @@
 				3AB27E1F792AB90652BCD287 /* CameraSettings.swift */,
 				5DE6629856F97F663B77C6BB /* Info.plist */,
 				ED1A48611AFE6BB7BCD65785 /* KeychainStore.swift */,
-				86DD309D8DC434E8F3EF5ABE /* LargeCameraWindowController.swift */,
 			);
 			name = CamBar;
 			sourceTree = "<group>";
@@ -216,7 +213,6 @@
 				AABFD7BFD2D1982B71C4365B /* CameraSettings.swift in Sources */,
 				57CDA64A8B355BE1870E4605 /* Info.plist in Sources */,
 				89BBA1CEA7207AA808B9D587 /* KeychainStore.swift in Sources */,
-				2967D5CE2A50D0B63BD37952 /* LargeCameraWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
