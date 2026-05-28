@@ -26,13 +26,10 @@ final class CameraPopoverViewController: NSViewController, NSTextFieldDelegate {
     private let volumeLabel = NSTextField(labelWithString: "\(CameraSettings.shared.volume)")
     private let quitButton = FirstMouseButton()
     private let buttonRow = NSView()
-    private var cameraManagerWindowController: CameraManagerWindowController?
     private var scheduledStop: DispatchWorkItem?
     private var overlayClickMonitor: Any?
     private var overlayGlobalClickMonitor: Any?
     private var currentCameraIndex = CameraSettings.shared.selectedCameraIndex
-    private var lastTabActionIndex: Int?
-    private var lastTabActionAt = Date.distantPast
 
     override func loadView() {
         view = NSView(frame: NSRect(x: 0, y: 0, width: 460, height: 410))
@@ -489,16 +486,6 @@ final class CameraPopoverViewController: NSViewController, NSTextFieldDelegate {
         updateVolumeControls()
     }
 
-    @objc private func selectCameraFromTabs() {
-        let index = cameraTabs.selectedSegment
-        if shouldRenameFromTabAction(index: index) {
-            renameCameraTab(at: index)
-            return
-        }
-
-        switchToCamera(index)
-    }
-
     @objc private func addCameraTab() {
         var streams = settings.cameraStreams
         let nextNumber = streams.count + 1
@@ -530,42 +517,6 @@ final class CameraPopoverViewController: NSViewController, NSTextFieldDelegate {
         settings.cameraStreams = streams
         settings.selectedCameraIndex = nextIndex
         switchToCamera(nextIndex)
-    }
-
-    private func renameCameraTab(at index: Int) {
-        // Rename is intentionally disabled for now.
-    }
-
-    private func shouldRenameFromTabAction(index: Int) -> Bool {
-        let wasAlreadySelected = index == currentCameraIndex
-        let now = Date()
-        defer {
-            lastTabActionIndex = index
-            lastTabActionAt = now
-        }
-
-        guard wasAlreadySelected,
-              lastTabActionIndex == index,
-              now.timeIntervalSince(lastTabActionAt) < 1.0
-        else {
-            return false
-        }
-
-        lastTabActionIndex = nil
-        lastTabActionAt = .distantPast
-        return true
-    }
-
-    private func commitCameraRename(index: Int, name: String) {
-        var streams = settings.cameraStreams
-        guard streams.indices.contains(index) else {
-            return
-        }
-
-        streams[index].name = name
-        settings.cameraStreams = streams
-        settings.selectedCameraIndex = index
-        configureCameraTabs()
     }
 
     @objc private func cameraStreamsDidChange() {
@@ -930,9 +881,6 @@ final class FirstMouseTextField: NSTextField {
 final class CameraTabBarView: NSView {
     var onSelect: ((Int) -> Void)?
     var onClose: ((Int) -> Void)?
-    var isEditing = false {
-        didSet { needsDisplay = true }
-    }
 
     private var tabs: [String] = []
     private var hoverIndex: Int?
@@ -997,8 +945,6 @@ final class CameraTabBarView: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
-        guard !isEditing else { return }
-
         let point = convert(event.locationInWindow, from: nil)
         let index = segmentIndex(at: point)
         guard index >= 0 else {
@@ -1037,7 +983,7 @@ final class CameraTabBarView: NSView {
                 NSColor.systemGreen.withAlphaComponent(0.18).setStroke()
                 selectedPath.lineWidth = 1
                 selectedPath.stroke()
-            } else if index == hoverIndex && !isEditing {
+            } else if index == hoverIndex {
                 NSColor.white.withAlphaComponent(0.11).setFill()
                 NSBezierPath(roundedRect: frame.insetBy(dx: 2, dy: 2), xRadius: 6, yRadius: 6).fill()
             }
@@ -1055,8 +1001,7 @@ final class CameraTabBarView: NSView {
             drawTitle(tabs[index], in: titleRect(for: index), selected: index == selectedSegment)
 
             if tabs.count > 1,
-               (index == hoverIndex || index == selectedSegment),
-               !isEditing {
+               (index == hoverIndex || index == selectedSegment) {
                 drawClose(in: closeRect(for: index), selected: index == selectedSegment)
             }
         }
@@ -1079,7 +1024,7 @@ final class CameraTabBarView: NSView {
 
     private func titleRect(for index: Int) -> NSRect {
         let frame = segmentFrame(for: index)
-        let hasClose = tabs.count > 1 && (index == hoverIndex || index == selectedSegment) && !isEditing
+        let hasClose = tabs.count > 1 && (index == hoverIndex || index == selectedSegment)
         let rightInset: CGFloat = hasClose ? 34 : 10
         return NSRect(x: frame.minX + 10, y: frame.minY + 4, width: max(frame.width - rightInset - 10, 20), height: frame.height - 8)
     }
@@ -1112,113 +1057,4 @@ final class CameraTabBarView: NSView {
         symbol.draw(in: imageRect, from: .zero, operation: .sourceOver, fraction: selected ? 0.72 : 0.58)
     }
 
-}
-
-final class InlineTabRenameController: NSObject, NSTextFieldDelegate {
-    private weak var tabBar: CameraTabBarView?
-    private weak var parentView: NSView?
-    private var textField: NSTextField?
-    private var editingIndex: Int?
-    private var isFinishing = false
-
-    var onCommit: ((Int, String) -> Void)?
-    var onFinish: (() -> Void)?
-
-    init(tabBar: CameraTabBarView, parentView: NSView) {
-        self.tabBar = tabBar
-        self.parentView = parentView
-        super.init()
-    }
-
-    func beginEditing(index: Int, value: String) {
-        guard let tabBar,
-              let parentView,
-              tabBar.segmentCount > 0,
-              index >= 0,
-              index < tabBar.segmentCount
-        else {
-            return
-        }
-
-        finish(save: false)
-        parentView.layoutSubtreeIfNeeded()
-        tabBar.layoutSubtreeIfNeeded()
-
-        let field = NSTextField()
-        field.stringValue = value
-        field.delegate = self
-        field.font = .systemFont(ofSize: 12, weight: .semibold)
-        field.alignment = .center
-        field.lineBreakMode = .byTruncatingTail
-        field.isEditable = true
-        field.isSelectable = true
-        field.isBordered = true
-        field.bezelStyle = .roundedBezel
-        field.drawsBackground = true
-        field.backgroundColor = NSColor.controlBackgroundColor.withAlphaComponent(0.98)
-        field.focusRingType = .default
-        field.frame = frameForSegment(index, in: tabBar, parentView: parentView).insetBy(dx: 3, dy: 1)
-        parentView.addSubview(field, positioned: .above, relativeTo: nil)
-
-        textField = field
-        editingIndex = index
-        tabBar.selectedSegment = index
-        DispatchQueue.main.async { [weak parentView, weak field] in
-            guard let parentView,
-                  let field
-            else {
-                return
-            }
-
-            parentView.window?.makeFirstResponder(field)
-            field.selectText(nil)
-        }
-    }
-
-    func controlTextDidEndEditing(_ obj: Notification) {
-        guard !isFinishing else {
-            return
-        }
-
-        finish(save: true)
-    }
-
-    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-        if commandSelector == #selector(NSResponder.insertNewline(_:)) {
-            finish(save: true)
-            return true
-        }
-
-        if commandSelector == #selector(NSResponder.cancelOperation(_:)) {
-            finish(save: false)
-            return true
-        }
-
-        return false
-    }
-
-    private func finish(save: Bool) {
-        guard let field = textField,
-              let index = editingIndex
-        else {
-            return
-        }
-
-        isFinishing = true
-        let name = field.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
-        textField = nil
-        editingIndex = nil
-        field.window?.makeFirstResponder(nil)
-        field.removeFromSuperview()
-        isFinishing = false
-
-        if save, !name.isEmpty {
-            onCommit?(index, name)
-        }
-        onFinish?()
-    }
-
-    private func frameForSegment(_ index: Int, in tabBar: CameraTabBarView, parentView: NSView) -> NSRect {
-        tabBar.convert(tabBar.segmentFrame(for: index), to: parentView)
-    }
 }
