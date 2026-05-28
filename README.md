@@ -4,6 +4,8 @@ CamBar is a small macOS menu bar viewer for local RTSP camera streams.
 
 It is built for quick checks while working: click the menu bar icon, glance at the live preview, adjust volume or mute, then get back to work.
 
+![CamBar menu bar preview](docs/readme-preview.png)
+
 ## Features
 
 - macOS menu bar camera preview

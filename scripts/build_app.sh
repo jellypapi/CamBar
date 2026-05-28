@@ -25,6 +25,7 @@ xcrun swiftc \
 
 cp "$ROOT_DIR/CamBar/Sources/Info.plist" "$APP_DIR/Contents/Info.plist"
 ditto "$FRAMEWORK_SRC" "$APP_DIR/Contents/Frameworks/VLCKit.framework"
+cp "$ROOT_DIR/CamBar/Resources/AppIcon.icns" "$APP_DIR/Contents/Resources/AppIcon.icns"
 cp "$ROOT_DIR/THIRD_PARTY_NOTICES.md" "$APP_DIR/Contents/Resources/THIRD_PARTY_NOTICES.md"
 cp "$ROOT_DIR/ThirdPartyLicenses/VLCKit-LGPL-2.1.txt" "$APP_DIR/Contents/Resources/ThirdPartyLicenses/VLCKit-LGPL-2.1.txt"
 codesign --force --deep --sign - "$APP_DIR"
