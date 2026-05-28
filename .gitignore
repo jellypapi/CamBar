@@ -1,0 +1,17 @@
+.DS_Store
+
+# Build outputs
+build/
+DerivedData/
+*.dSYM
+
+# Xcode user state
+*.xcuserstate
+xcuserdata/
+
+# CocoaPods generated files
+Pods/
+*.xcworkspace/
+
+# Local logs
+*.log
