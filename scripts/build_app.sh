@@ -11,7 +11,7 @@ if [[ ! -d "$ROOT_DIR/Pods/VLCKit" ]]; then
 fi
 
 rm -rf "$APP_DIR"
-mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Frameworks"
+mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Frameworks" "$APP_DIR/Contents/Resources/ThirdPartyLicenses"
 
 xcrun swiftc \
   -target arm64-apple-macos13.0 \
@@ -25,6 +25,8 @@ xcrun swiftc \
 
 cp "$ROOT_DIR/CamBar/Sources/Info.plist" "$APP_DIR/Contents/Info.plist"
 ditto "$FRAMEWORK_SRC" "$APP_DIR/Contents/Frameworks/VLCKit.framework"
+cp "$ROOT_DIR/THIRD_PARTY_NOTICES.md" "$APP_DIR/Contents/Resources/THIRD_PARTY_NOTICES.md"
+cp "$ROOT_DIR/ThirdPartyLicenses/VLCKit-LGPL-2.1.txt" "$APP_DIR/Contents/Resources/ThirdPartyLicenses/VLCKit-LGPL-2.1.txt"
 codesign --force --deep --sign - "$APP_DIR"
 
 echo "$APP_DIR"

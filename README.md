@@ -70,6 +70,12 @@ open build/Manual/CamBar.app
 
 You can also open `CamBar.xcworkspace` in Xcode after running `pod install`, but `scripts/build_app.sh` is the reliable local build path right now.
 
+## Downloaded Builds
+
+GitHub Release builds are ad-hoc signed and are not Apple-notarized yet.
+
+On first launch, macOS may block the app because it was downloaded from the internet and is not notarized. Use Finder's right-click `Open` flow if you trust the downloaded build, or build locally from source.
+
 ## Development Notes
 
 - The app uses VLCKit for RTSP playback.
@@ -80,3 +86,11 @@ You can also open `CamBar.xcworkspace` in Xcode after running `pod install`, but
 ## Privacy
 
 CamBar connects directly to RTSP URLs on your local network. It does not require a cloud login and does not send your camera credentials to a server.
+
+## License
+
+CamBar's own source code is licensed under the MIT License.
+
+CamBar uses VLCKit for RTSP playback. The bundled VLCKit framework is licensed under the GNU Lesser General Public License version 2.1. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [ThirdPartyLicenses/VLCKit-LGPL-2.1.txt](ThirdPartyLicenses/VLCKit-LGPL-2.1.txt).
+
+The release app bundles VLCKit as an unmodified dynamic framework and includes the VLCKit LGPL license text in the app resources. This is not legal advice; verify license obligations before commercial redistribution.
