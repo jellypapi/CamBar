@@ -1,4 +1,4 @@
-# CamBar 메모리
+# CamBar Memory
 
 ## 목적
 
